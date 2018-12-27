@@ -15,7 +15,7 @@ source:
     - libmp3lame.patch
 
 build:
-  number: 0
+  number: 1000
   skip: True  # [win]
 
 requirements:
