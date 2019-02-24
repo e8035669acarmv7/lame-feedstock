@@ -15,8 +15,12 @@ source:
     - libmp3lame.patch
 
 build:
-  number: 1000
+  number: 1001
   skip: True  # [win]
+  run_exports:
+    # seems to be minor version compatibility
+    # https://abi-laboratory.pro/tracker/timeline/lame/
+    - {{ pin_subpackage('lame', max_pin='x.x') }}
 
 requirements:
   build:
