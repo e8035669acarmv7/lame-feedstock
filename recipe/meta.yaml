@@ -1,22 +1,18 @@
-# Jinja variables help maintain the recipe as you'll update the version only here.
-# Using the name variable with the URL in line 13 is conviniet
-# when copying and pasting from another recipe, but not really needed.
-{% set name = "lame" %}
 {% set version = "3.100" %}
 
 package:
-  name: {{ name }}
+  name: lame
   version: {{ version }}
 
 source:
-  url: https://downloads.sourceforge.net/sourceforge/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://downloads.sourceforge.net/sourceforge/lame/lame-{{ version }}.tar.gz
   sha256: ddfe36cab873794038ae2c1210557ad34857a4b6bdc515785d1da9e175b1da1e
   patches:
     - libmp3lame.patch
+    - fixup_windows_build.patch
 
 build:
-  number: 1001
-  skip: True  # [win]
+  number: 1002
   run_exports:
     # seems to be minor version compatibility
     # https://abi-laboratory.pro/tracker/timeline/lame/
@@ -26,11 +22,13 @@ requirements:
   build:
     - gnuconfig  # [unix]
     - {{ compiler('c') }}
-    - make
+    - make  # [unix]
+    - nasm  # [win]
 
 test:
   commands:
     - lame --genre-list testcase.mp3
+    - lame --longhelp
 
 about:
   home: https://lame.sourceforge.io/
@@ -50,3 +48,4 @@ about:
 extra:
   recipe-maintainers:
     - soumith
+    - hmaarrfk
