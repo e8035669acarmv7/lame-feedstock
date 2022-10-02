@@ -12,5 +12,5 @@ make install -j$CPU_COUNT
 
 # test
 if [[ "$CONDA_BUILD_CROSS_COMPILATION" != "1" ]]; then
-  $PREFIX/bin/lame --genre-list testcase.mp3
+  $PREFIX/bin/lame testcase.mp3
 fi
