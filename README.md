@@ -3,7 +3,7 @@ About lame
 
 Home: https://lame.sourceforge.io/
 
-Package license: LGPL
+Package license: LGPL-2.0-only
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/lame-feedstock/blob/main/LICENSE.txt)
 

@@ -29,11 +29,14 @@ test:
   commands:
     - lame --genre-list testcase.mp3
     - lame --longhelp
+    - test -f $PREFIX/include/lame/lame.h  # [not win]
+    - if not exist %PREFIX%\\Library\\include\\lame\\lame.h exit 1  # [win]
 
 about:
   home: https://lame.sourceforge.io/
-  license: LGPL
-  license_file: LICENSE
+  license: LGPL-2.0-only
+  license_family: LGPL
+  license_file: COPYING
   summary: 'High quality MPEG Audio Layer III (MP3) encoder'
 
   # The remaining entries in this section are optional, but recommended
