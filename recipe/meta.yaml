@@ -12,7 +12,7 @@ source:
     - fixup_windows_build.patch
 
 build:
-  number: 1002
+  number: 1003
   run_exports:
     # seems to be minor version compatibility
     # https://abi-laboratory.pro/tracker/timeline/lame/
@@ -49,3 +49,4 @@ extra:
   recipe-maintainers:
     - soumith
     - hmaarrfk
+    - bmcfee
