@@ -10,6 +10,7 @@ dir output
 mkdir %LIBRARY_PREFIX%\bin
 mkdir %LIBRARY_PREFIX%\lib
 mkdir %LIBRARY_PREFIX%\include
+mkdir %LIBRARY_PREFIX%\include\lame
 
 copy /Y output\libmp3lame.dll %LIBRARY_PREFIX%\bin\libmp3lame.dll
 if errorlevel 1 exit 1
@@ -17,7 +18,7 @@ if errorlevel 1 exit 1
 copy /Y output\libmp3lame.lib %LIBRARY_PREFIX%\lib\libmp3lame.lib
 if errorlevel 1 exit 1
 
-copy /Y include\lame.h %LIBRARY_PREFIX%\include\lame.h
+copy /Y include\lame.h %LIBRARY_PREFIX%\include\lame\lame.h
 if errorlevel 1 exit 1
 
 copy /Y output\lame.exe %LIBRARY_PREFIX%\bin\lame.exe
